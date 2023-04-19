@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-mgdpm!z#_wyib2lg#+je)vq-2*_4ld+4(u(7-80s3*(uw1@dza
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["wolf10000.pythonanywhere.com",'*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'Home',
     'photo',
     'alien',
     'django.contrib.admin',
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'photojet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/Wolf10000/deploy2/photojets/photo/templates'],
+        'DIRS': ['/photo/templates','/alien/templates','/Home/templates'], #'/home/Wolf10000/deploy2/photojets/alien/templates' 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = ["/home/Wolf10000/deploy/photojet/photo/static","/home/Wolf10000/deploy2/photojet/alien/static""]
+STATIC_ROOT = ["/photo/static",
+               "/alien/static",
+               "Home/static"] #"/home/Wolf10000/deploy2/photojet/alien/static",
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
