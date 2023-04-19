@@ -13,6 +13,7 @@
             <th>Main</th>
             <th>Date</th>
             <th>Place</th>
+            <th>Link</th>
         </thead>
         <tbody>
             {% for x in data %}
@@ -21,10 +22,12 @@
                     <td>{{ x.main_topic }}</td>
                     <td>{{ x.date }}</td>
                     <td>{{ x.place }}</td>
+                    <td><a href="{% url 'page' x.E_id %}">link</a></td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <a href="{% url 'add' %}">Add</a>
     
 </body>
 </html>

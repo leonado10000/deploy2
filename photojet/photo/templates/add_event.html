@@ -9,8 +9,8 @@
 </head>
 <body>
     <form action="{% url 'add' %}" method="post">
-        {% csrf_token %}
         <div class="Form">
+            {% csrf_token %}
             <h1>EVENTS</h1>
             <div class="lable_type">
                 <label for="date">Date:</label>
@@ -18,7 +18,10 @@
             </div>
             <div class="lable_type">
                 <label for="text">Place:</label>
-                <input type="text" name="place" class="lable_contorl">
+                <select class="lable_contorl" name="place">
+                    <option value="Library">Library<option>
+                    <option value="BasketballCourt">BasketballCourt<option>
+                </select>
             </div>
             <div class="lable_type">
                 <label for="text">Photo Link:</label>
@@ -32,12 +35,12 @@
                 <label for="text">Main Task:</label>
                 <input type="text" name="main" class="lable_contorl" >
             </div>
-            <div id="submit">
-                <label for="submit"></label>
-                <input type="submit" >
+            <div id="Submit">
+                <input type="submit" value="Submit" class="lable_contorl">
             </div>
             
         </div>
     </form>
+    <a href="{% url 'events' %}">Events</a>
 </body>
 </html>

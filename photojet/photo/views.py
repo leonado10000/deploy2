@@ -24,3 +24,26 @@ def event_page(request):
     return render(request, 'events.html',{
         "data":dat
     })
+
+def page(request, id):
+    if request.method=="POST":
+        data = request.POST
+        print(data)
+        choice = data["next"]
+        if choice == '1':
+            id += 1
+            if id == len(EVENT.objects.all())+1 :
+                print("works")
+                id = 1
+        else:
+            id -= 1
+            print(id)
+            if id == 0 or id == '0':
+                id = len(EVENT.objects.all())
+                
+                print("works",id)
+
+    data = EVENT.objects.get(E_id = id)
+    return render(request, "page.html" ,{
+        "data":data
+    })
